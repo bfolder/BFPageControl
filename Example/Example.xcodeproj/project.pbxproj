@@ -13,6 +13,7 @@
 		602E21B915C239C900DE228D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 602E21B715C239C900DE228D /* Credits.rtf */; };
 		602E21BC15C239C900DE228D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E21BB15C239C900DE228D /* AppDelegate.m */; };
 		602E21BF15C239C900DE228D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E21BD15C239C900DE228D /* MainMenu.xib */; };
+		602E21CB15C23A5400DE228D /* BFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E21CA15C23A5400DE228D /* BFPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		602E21BA15C239C900DE228D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		602E21BB15C239C900DE228D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		602E21BE15C239C900DE228D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		602E21C915C23A5400DE228D /* BFPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFPageControl.h; path = ../../BFPageControl.h; sourceTree = "<group>"; };
+		602E21CA15C23A5400DE228D /* BFPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFPageControl.m; path = ../../BFPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		602E21AE15C239C900DE228D /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				602E21C915C23A5400DE228D /* BFPageControl.h */,
+				602E21CA15C23A5400DE228D /* BFPageControl.m */,
 				602E21BA15C239C900DE228D /* AppDelegate.h */,
 				602E21BB15C239C900DE228D /* AppDelegate.m */,
 				602E21BD15C239C900DE228D /* MainMenu.xib */,
@@ -168,6 +173,7 @@
 			files = (
 				602E21B515C239C900DE228D /* main.m in Sources */,
 				602E21BC15C239C900DE228D /* AppDelegate.m in Sources */,
+				602E21CB15C23A5400DE228D /* BFPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				602E21C415C239C900DE228D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
