@@ -7,14 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "BFPageControl.h"
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+@synthesize label = _label;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [_label setStringValue: @"Index 5 selected"];
+    
+    // Setup page control
     NSRect frame = self.window.frame;
     BFPageControl *control = [[BFPageControl alloc] init];
+    [control setDelegate: self];
     [control setNumberOfPages: 11];
     [control setIndicatorDiameterSize: 15];
     [control setIndicatorMargin: 5];
@@ -45,6 +53,17 @@
     }];
     [self.window.contentView addSubview: control];
     [control setFrame: CGRectMake(frame.size.width / 2 - control.frame.size.width / 2, 50, 40, 40)];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Delegate
+
+-(void)pageControl: (BFPageControl *)pageControl didSelectPageAtIndex: (NSInteger)index
+{
+    NSLog(@"%@: Selected page at index: %li", pageControl, index);
+    [_label setStringValue: [NSString stringWithFormat: @"Index %li selected", index]];
 }
 
 @end

@@ -7,6 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class BFPageControl;
+
+@protocol BFPageControlDelegate <NSObject>
+@optional
+-(void)pageControl: (BFPageControl *)pageControl didSelectPageAtIndex: (NSInteger)index;
+@end
+
 @interface BFPageControlCell : NSButtonCell
 @property (nonatomic)BOOL useHandCursor;
 @property (copy)void (^drawingBlock)(NSRect, NSView *, BOOL, BOOL);
@@ -85,5 +92,11 @@
  *  Optional drawing block, for custom dot drawing.
  */
 -(void)setDrawingBlock: (void (^)(NSRect frame, NSView *view, BOOL isSelected, BOOL isHiglighted))drawingBlock;
+
+///---------------------------------------------------------------------------------------
+/// @name Misc Properties
+///---------------------------------------------------------------------------------------
+
+@property (nonatomic, assign)id <BFPageControlDelegate>delegate;
 
 @end

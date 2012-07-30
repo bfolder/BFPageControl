@@ -70,6 +70,8 @@
 @synthesize indicatorMargin = _indicatorMargin;
 @synthesize useHandCursor = _useHandCursor;
 
+@synthesize delegate = _delegate;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -157,6 +159,10 @@
 {
     NSUInteger page = [_matrix.cells indexOfObject: _matrix.selectedCell];
     _currentPage = page;
+    
+    // Call delegate
+    if(_delegate && [_delegate respondsToSelector: @selector(pageControl:didSelectPageAtIndex:)])
+        [_delegate pageControl: self didSelectPageAtIndex: page];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

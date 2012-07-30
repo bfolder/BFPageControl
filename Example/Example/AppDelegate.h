@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BFPageControl.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, BFPageControlDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+
+@property (nonatomic, assign)IBOutlet NSTextField *label;
 
 @end
