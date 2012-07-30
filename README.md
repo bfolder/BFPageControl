@@ -6,7 +6,7 @@ This is a page control for the Mac. Most of the methods are derived from the UIP
 
 ![BFPageControl](https://github.com/bfolder/BFPageControl/raw/master/screenshot.png)
 
-## How it works
+### How it works
 
 BFPageControl is an NSView subclass. Just add it somewhere to your view hierarchy. Look at the example for a quick setup. 
 
