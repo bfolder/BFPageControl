@@ -29,8 +29,9 @@
     if(!_drawingBlock)
         return;
     
+    [NSGraphicsContext saveGraphicsState];
     _drawingBlock(frame, view, [self state] == NSOnState, self.isHighlighted);
-    
+    [NSGraphicsContext restoreGraphicsState];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,6 +87,8 @@
         _indicatorMargin = 5.0;
         _matrix = nil;
         _useHandCursor = NO;
+        _drawingBlock = nil;
+        _hidesForSinglePage = NO;
     }
     
     return self;
@@ -100,6 +103,9 @@
 {
     if(_matrix)
         [_matrix removeFromSuperview];
+    
+    if(_hidesForSinglePage && self.numberOfPages < 2)
+        return;
     
     NSSize size = [self sizeForNumberOfPages: _numberOfPages];
     NSRect frame = NSMakeRect(0, 0, size.width, size.height);
@@ -119,7 +125,6 @@
     
     __weak id wSelf = self;
     void(^block)(NSRect, NSView *, BOOL, BOOL) = ^(NSRect frame, NSView *theView, BOOL isSelected, BOOL isHighlighted){
-        [NSGraphicsContext saveGraphicsState];
         BFPageControl *aSelf = wSelf;
         NSBezierPath *path = [NSBezierPath bezierPathWithOvalInRect: frame];
         NSColor *color = isSelected ? aSelf.selectedColor : aSelf.unselectedColor;
@@ -129,7 +134,6 @@
             
         [color set];
         [path fill];
-        [NSGraphicsContext restoreGraphicsState];
     };
 
     [_matrix.cells enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop){

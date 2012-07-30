@@ -29,7 +29,6 @@
     [control setCurrentPage: 5];
     [control setDrawingBlock: ^(NSRect frame, NSView *aView, BOOL isSelected, BOOL isHighlighted){
         
-        [NSGraphicsContext saveGraphicsState];
         frame = CGRectInset(frame, 2.0, 2.0);
         NSBezierPath *path = [NSBezierPath bezierPathWithOvalInRect: CGRectMake(frame.origin.x, frame.origin.y + 1.5, frame.size.width, frame.size.height)];
         [[NSColor whiteColor] set];
@@ -49,7 +48,6 @@
         [[NSColor colorWithCalibratedRed: (25.0 / 255.0) green: (25.0 / 255.0) blue: (25.0 / 255.0) alpha: 0.15] set];
         [NSBezierPath setDefaultLineWidth: 1.0];
         [[NSBezierPath bezierPathWithOvalInRect: frame] stroke];
-        [NSGraphicsContext restoreGraphicsState];
     }];
     [self.window.contentView addSubview: control];
     [control setFrame: CGRectMake(frame.size.width / 2 - control.frame.size.width / 2, 50, 40, 40)];
