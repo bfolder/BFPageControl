@@ -112,8 +112,8 @@
     _matrix = [[NSMatrix alloc] initWithFrame: frame mode: NSRadioModeMatrix cellClass: [BFPageControlCell class] numberOfRows: 1 numberOfColumns: _numberOfPages];
     _matrix.drawsBackground = YES;
     _matrix.backgroundColor = [NSColor clearColor];
-    _matrix.cellSize = CGSizeMake(_indicatorDiameterSize, _indicatorDiameterSize);
-    _matrix.intercellSpacing = CGSizeMake(_indicatorMargin, _indicatorMargin);
+    _matrix.cellSize = NSMakeSize(_indicatorDiameterSize, _indicatorDiameterSize);
+    _matrix.intercellSpacing = NSMakeSize(_indicatorMargin, _indicatorMargin);
     _matrix.allowsEmptySelection = NO;
     [_matrix setTarget: self];
     [_matrix setAction: @selector(_clickedItem:)];
@@ -151,7 +151,7 @@
 
 -(NSSize)sizeForNumberOfPages: (NSInteger)pageCount
 {
-	return CGSizeMake(pageCount * _indicatorDiameterSize + (pageCount - 1) * _indicatorMargin, _indicatorDiameterSize);
+	return NSMakeSize(pageCount * _indicatorDiameterSize + (pageCount - 1) * _indicatorMargin, _indicatorDiameterSize);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
