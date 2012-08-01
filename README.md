@@ -1,6 +1,6 @@
 ### Readme
 
-This is a page control for the Mac. Most of the methods are derived from the UIPageControl class in iOS.
+This is a page control for Mac OS X. Most of the methods are derived from the UIPageControl class in iOS.
 
 ### Screenshot
 
