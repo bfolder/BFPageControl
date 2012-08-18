@@ -102,7 +102,7 @@
 -(void)updateCurrentPageDisplay
 {
     if(_matrix)
-        [_matrix removeFromSuperview];
+        [_matrix removeFromSuperview], _matrix = nil;
     
     if(_hidesForSinglePage && self.numberOfPages < 2)
         return;
