@@ -278,7 +278,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
--(void)setDrawingBlock: (void (^)(NSRect frame, NSView *view, BOOL isSelected, BOOL isHiglighted))drawingBlock;
+-(void)setDrawingBlock: (void (^)(NSRect frame, NSView *inView, BOOL isSelected, BOOL isHiglighted))drawingBlock;
 {
     _drawingBlock = [drawingBlock copy];
     [self updateCurrentPageDisplay];

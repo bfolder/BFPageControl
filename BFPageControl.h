@@ -91,7 +91,7 @@
 /**
  *  Optional drawing block, for custom dot drawing.
  */
--(void)setDrawingBlock: (void (^)(NSRect frame, NSView *view, BOOL isSelected, BOOL isHiglighted))drawingBlock;
+-(void)setDrawingBlock: (void (^)(NSRect frame, NSView *inView, BOOL isSelected, BOOL isHiglighted))drawingBlock;
 
 ///---------------------------------------------------------------------------------------
 /// @name Misc Properties
