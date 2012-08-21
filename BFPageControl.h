@@ -79,17 +79,17 @@
 @property (nonatomic)CGFloat indicatorDiameterSize;
 
 /**
- *  Margin between Dots.
+ *  Margin between dots.
  */
 @property (nonatomic)CGFloat indicatorMargin;
 
 /**
- *  Use Hand-Cusor on pages.
+ *  Use Hand-Cusor on dots.
  */
 @property (nonatomic)BOOL useHandCursor;
 
 /**
- *  Optional drawing block, for custom dot drawing.
+ *  Optional drawing block (custom dot drawing).
  */
 -(void)setDrawingBlock: (void (^)(NSRect frame, NSView *inView, BOOL isSelected, BOOL isHiglighted))drawingBlock;
 
