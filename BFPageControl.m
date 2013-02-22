@@ -94,21 +94,6 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder {
-    if(self = [super initWithCoder:aDecoder])
-    {
-        _numberOfPages = 0;
-        _indicatorDiameterSize = 10.0;
-        _indicatorMargin = 5.0;
-        _matrix = nil;
-        _useHandCursor = NO;
-        _drawingBlock = nil;
-        _hidesForSinglePage = NO;
-    }
-    
-    return self;
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
