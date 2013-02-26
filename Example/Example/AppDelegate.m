@@ -50,7 +50,8 @@
         [[NSBezierPath bezierPathWithOvalInRect: frame] stroke];
     }];
     [self.window.contentView addSubview: control];
-    [control setFrame: CGRectMake(frame.size.width / 2 - control.frame.size.width / 2, 50, 40, 40)];
+    CGSize size = [control intrinsicContentSize];
+    [control setFrame: CGRectMake((frame.size.width - size.width)/2, 50, size.width, size.height)];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
