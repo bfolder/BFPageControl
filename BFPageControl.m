@@ -80,7 +80,7 @@
 
 -(id)initWithFrame: (NSRect)frameRect
 {
-    if(self = [super initWithFrame: NSMakeRect(frameRect.origin.x, frameRect.origin.y, 0, 0)])
+    if(self = [super initWithFrame:frameRect])
     {
         _numberOfPages = 0;
         _indicatorDiameterSize = 10.0;
@@ -104,11 +104,21 @@
     if(_matrix)
         [_matrix removeFromSuperview], _matrix = nil;
     
-    if(_hidesForSinglePage && self.numberOfPages < 2)
+    NSUInteger numberOfPages = self.numberOfPages;
+    if(_hidesForSinglePage && numberOfPages < 2)
         return;
     
     NSSize size = [self sizeForNumberOfPages: _numberOfPages];
-    NSRect frame = NSMakeRect(0, 0, size.width, size.height);
+    
+    CGRect bounds = self.bounds;
+    CGFloat W = bounds.size.width;
+    CGFloat H = bounds.size.height;
+    
+    CGFloat x = floorf((W-size.width)/2);
+    CGFloat y = floorf((H-size.height)/2);
+    
+    NSRect frame = NSMakeRect(x, y, size.width, size.height);
+    
     _matrix = [[NSMatrix alloc] initWithFrame: frame mode: NSRadioModeMatrix cellClass: [BFPageControlCell class] numberOfRows: 1 numberOfColumns: _numberOfPages];
     _matrix.drawsBackground = YES;
     _matrix.backgroundColor = [NSColor clearColor];
@@ -118,10 +128,6 @@
     [_matrix setTarget: self];
     [_matrix setAction: @selector(_clickedItem:)];
     [self addSubview: _matrix];
-    
-    frame.origin.y = self.frame.origin.y;
-    frame.origin.x = self.frame.origin.x;
-    super.frame = frame;
     
     __weak id wSelf = self;
     void(^block)(NSRect, NSView *, BOOL, BOOL) = ^(NSRect frame, NSView *theView, BOOL isSelected, BOOL isHighlighted){
@@ -185,9 +191,7 @@
 
 -(void)setFrame: (NSRect)frameRect
 {
-    frameRect.size = [self sizeForNumberOfPages: _numberOfPages];
     [super setFrame: frameRect];
-    
     [self updateCurrentPageDisplay];
 }
 
@@ -195,9 +199,7 @@
 
 -(void)setBounds: (NSRect)aRect
 {
-    aRect.size = [self sizeForNumberOfPages: _numberOfPages];
     [super setBounds: aRect];
-    
     [self updateCurrentPageDisplay];
 }
 
@@ -282,6 +284,18 @@
 {
     _drawingBlock = [drawingBlock copy];
     [self updateCurrentPageDisplay];
+}
+
+//! size to fit the current setting
+- (NSSize)intrinsicContentSize {
+
+    NSSize size = _matrix.frame.size;
+    return size;
+
+}
+
+- (NSSize)fittingSize {
+    return [self intrinsicContentSize];
 }
 
 @end

@@ -97,6 +97,6 @@
 /// @name Misc Properties
 ///---------------------------------------------------------------------------------------
 
-@property (nonatomic, assign)id <BFPageControlDelegate>delegate;
+@property (nonatomic, assign) IBOutlet id <BFPageControlDelegate>delegate;
 
 @end
