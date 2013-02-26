@@ -129,10 +129,6 @@
     [_matrix setAction: @selector(_clickedItem:)];
     [self addSubview: _matrix];
     
-//    frame.origin.y = self.frame.origin.y;
-//    frame.origin.x = self.frame.origin.x;
-//    super.frame = frame;
-    
     __weak id wSelf = self;
     void(^block)(NSRect, NSView *, BOOL, BOOL) = ^(NSRect frame, NSView *theView, BOOL isSelected, BOOL isHighlighted){
         BFPageControl *aSelf = wSelf;
@@ -288,6 +284,18 @@
 {
     _drawingBlock = [drawingBlock copy];
     [self updateCurrentPageDisplay];
+}
+
+//! size to fit the current setting
+- (NSSize)intrinsicContentSize {
+
+    NSSize size = _matrix.frame.size;
+    return size;
+
+}
+
+- (NSSize)fittingSize {
+    return [self intrinsicContentSize];
 }
 
 @end
