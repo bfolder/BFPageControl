@@ -268,6 +268,8 @@
     _numberOfPages = numberOfPages;
     
     [self updateCurrentPageDisplay];
+  
+    [self invalidateIntrinsicContentSize];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -289,9 +291,7 @@
 //! size to fit the current setting
 - (NSSize)intrinsicContentSize {
 
-    NSSize size = _matrix.frame.size;
-    return size;
-
+  return [self sizeForNumberOfPages:[self numberOfPages]];
 }
 
 - (NSSize)fittingSize {
