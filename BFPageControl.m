@@ -80,7 +80,7 @@
 
 -(id)initWithFrame: (NSRect)frameRect
 {
-    if(self = [super initWithFrame:frameRect])
+    if(self = [super initWithFrame: frameRect])
     {
         _numberOfPages = 0;
         _indicatorDiameterSize = 10.0;
@@ -268,7 +268,6 @@
     _numberOfPages = numberOfPages;
     
     [self updateCurrentPageDisplay];
-  
     [self invalidateIntrinsicContentSize];
 }
 
@@ -288,13 +287,18 @@
     [self updateCurrentPageDisplay];
 }
 
-//! size to fit the current setting
-- (NSSize)intrinsicContentSize {
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
-  return [self sizeForNumberOfPages:[self numberOfPages]];
+-(NSSize)intrinsicContentSize
+{
+    //! size to fit the current setting
+    return [self sizeForNumberOfPages: [self numberOfPages]];
 }
 
-- (NSSize)fittingSize {
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+-(NSSize)fittingSize
+{
     return [self intrinsicContentSize];
 }
 
