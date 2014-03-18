@@ -2,9 +2,19 @@
 
 This is a page control for Mac OS X. Most of the methods are derived from the UIPageControl class in iOS.
 
+---
+
 ### Screenshot
 
 ![BFPageControl](https://github.com/bfolder/BFPageControl/raw/master/screenshot.png)
+
+### Installation
+
+Include all files manually or add the following to your podfile:
+
+```Ruby
+pod 'BFPageControl'
+```
 
 ### How it works
 
