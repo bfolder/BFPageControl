@@ -102,7 +102,7 @@
 -(void)updateCurrentPageDisplay
 {
     if(_matrix)
-        [_matrix removeFromSuperview], _matrix = nil;
+        (void)([_matrix removeFromSuperview]), _matrix = nil;
     
     NSUInteger numberOfPages = self.numberOfPages;
     if(_hidesForSinglePage && numberOfPages < 2)
