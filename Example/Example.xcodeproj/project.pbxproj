@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039C6E931F91A22300C3B3E1 /* BFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C6E911F91A22200C3B3E1 /* BFPageControl.m */; };
 		602E21A915C239C900DE228D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E21A815C239C900DE228D /* Cocoa.framework */; };
 		602E21B315C239C900DE228D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E21B115C239C900DE228D /* InfoPlist.strings */; };
 		602E21B515C239C900DE228D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E21B415C239C900DE228D /* main.m */; };
 		602E21B915C239C900DE228D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 602E21B715C239C900DE228D /* Credits.rtf */; };
 		602E21BC15C239C900DE228D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E21BB15C239C900DE228D /* AppDelegate.m */; };
 		602E21BF15C239C900DE228D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E21BD15C239C900DE228D /* MainMenu.xib */; };
-		602E21CB15C23A5400DE228D /* BFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E21CA15C23A5400DE228D /* BFPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		039C6E911F91A22200C3B3E1 /* BFPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BFPageControl.m; path = ../../BFPageControl/BFPageControl.m; sourceTree = "<group>"; };
+		039C6E921F91A22200C3B3E1 /* BFPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BFPageControl.h; path = ../../BFPageControl/BFPageControl.h; sourceTree = "<group>"; };
 		602E21A415C239C900DE228D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E21A815C239C900DE228D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		602E21AB15C239C900DE228D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -30,8 +32,6 @@
 		602E21BA15C239C900DE228D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		602E21BB15C239C900DE228D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		602E21BE15C239C900DE228D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		602E21C915C23A5400DE228D /* BFPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFPageControl.h; path = ../../BFPageControl.h; sourceTree = "<group>"; };
-		602E21CA15C23A5400DE228D /* BFPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFPageControl.m; path = ../../BFPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 		602E21AE15C239C900DE228D /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				602E21C915C23A5400DE228D /* BFPageControl.h */,
-				602E21CA15C23A5400DE228D /* BFPageControl.m */,
+				039C6E921F91A22200C3B3E1 /* BFPageControl.h */,
+				039C6E911F91A22200C3B3E1 /* BFPageControl.m */,
 				602E21BA15C239C900DE228D /* AppDelegate.h */,
 				602E21BB15C239C900DE228D /* AppDelegate.m */,
 				602E21BD15C239C900DE228D /* MainMenu.xib */,
@@ -171,9 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039C6E931F91A22300C3B3E1 /* BFPageControl.m in Sources */,
 				602E21B515C239C900DE228D /* main.m in Sources */,
 				602E21BC15C239C900DE228D /* AppDelegate.m in Sources */,
-				602E21CB15C23A5400DE228D /* BFPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
